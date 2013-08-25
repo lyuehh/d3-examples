@@ -102,6 +102,12 @@ header {
 }
 
 header ul {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+/*
+header ul {
   list-style:none;
   height:40px;
   
@@ -137,6 +143,7 @@ header ul a {
   padding-top:6px;
   height:40px;
 }
+*/
 
 strong {
   color:#222;
