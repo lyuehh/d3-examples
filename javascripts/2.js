@@ -13,7 +13,7 @@ var c = svg.append('circle');
 c.attr('cx', 250)
   .attr('cy', 250)
   .attr('r', 250)
-  .attr('fill', 'red');
+  .attr('fill', 'blue');
 
 // 饼图
 
@@ -44,7 +44,7 @@ var arcs = svg.selectAll('g.arc')
 // path
 arcs.append('path')
     .attr('fill', function(d, i) {
-        return 'transparent';
+        return color(i);
     })
     .attr('d', arc);
 
@@ -60,4 +60,3 @@ arcs.append('circle')
     .attr('fill', function(d, i) {
         return color1(i);
     });
-

@@ -9,16 +9,16 @@ var svg = d3.select('#container')
   .attr('height', h);
 
 // 最外面的大圆
-var c = svg.append('circle');
-c.attr('cx', 250)
-  .attr('cy', 250)
-  .attr('r', 250)
-  .attr('fill', 'blue');
+var c = svg.append('circle')
+  .attr('cx', w/2)
+  .attr('cy', w/2)
+  .attr('r', w/2)
+  .attr('fill', 'red');
 
 // 饼图
 
 // outerRadius, innerRadius
-var or = 250;
+var or = 500;
 var ir = 0;
 
 // 颜色集合
@@ -39,24 +39,42 @@ var arcs = svg.selectAll('g.arc')
     .enter()
     .append('g')
     .attr('class', 'arc')
-    .attr('transform', 'translate(' + or + ',' + or + ')');
+    .attr('transform', 'translate(' + or/2 + ',' + or/2 + ')');
 
 // path
 arcs.append('path')
     .attr('fill', function(d, i) {
-        return color(i);
+        return 'transparent';
     })
     .attr('d', arc);
 
+// 蒙版
+arcs.append('clipPath')
+    .attr('id', 'chart-area')
+    .append('circle')
+    .attr('x', w/2)
+    .attr('y', w/2)
+    .attr('r', w/2);
+
 // circle
 arcs.append('circle')
+    .attr('clip-path', 'url(#chart-area)')
     .attr('cx', function(d, i) {
         return arc.centroid(d)[0];
     })
     .attr('cy', function(d, i) {
         return arc.centroid(d)[1];
     })
-    .attr('r', 25)
+    .attr('r', 97)
     .attr('fill', function(d, i) {
         return color1(i);
     });
+
+// rect
+svg.append('rect')
+    .attr('x', 200)
+    .attr('y', 200)
+    .attr('width', 100)
+    .attr('height', 100)
+    .attr('transform', "rotate(45, 250, 250)")
+    .attr('fill', 'yellow');
