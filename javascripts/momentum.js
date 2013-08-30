@@ -24,12 +24,18 @@ force.on("tick", function() {
     });
 });
 
+var p0;
+
 svg.on("mousemove", function() {
-    var point = d3.mouse(this),
+    var p1 = d3.mouse(this),
     node = {
-        x: point[0],
-        y: point[1]
+        x: p1[0],
+        y: p1[1],
+        px: (p0 || (p0 = p1))[0],
+        py: p0[1]
     };
+
+    p0 = p1;
 
     svg.append("svg:circle")
     .data([node])
@@ -40,13 +46,11 @@ svg.on("mousemove", function() {
     .attr("cy", function(d) {
         return d.y;
     })
-    .attr("r", 0.0001)
+    .attr("r", 4.5)
     .transition()
     .ease(Math.sqrt)
-    .attr("r", 5)
-    .transition()
     .delay(3000)
-    .attr("r", 0.0001)
+    .attr("r", 1e-6)
     .each("end", function() {
         force.nodes().shift();
     })
