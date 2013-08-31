@@ -59,4 +59,7 @@ arcs.append('circle')
     .attr('r', 25)
     .attr('fill', function(d, i) {
         return color1(i);
-    });
+    })
+    .style('stroke', '#000')
+    .style('stroke-width', 1)
+    .attr('transform', 'rotate(22.5,0,0)');

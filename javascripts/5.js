@@ -40,8 +40,7 @@ var arcs = svg.selectAll('g.arc')
     .enter()
     .append('g')
     .attr('class', 'arc')
-    .attr('transform', 'translate(' + or + ',' + or + ')')
-    .attr('transform', 'rotate(45, -250, 250)');
+    .attr('transform', 'translate(' + or + ',' + or + ')'+ ',' +'rotate(45, '+ 0 +','+ 0 +')');
 
 // path
 arcs.append('path')
@@ -57,7 +56,23 @@ arcs.append('circle')
     .attr('cy', function(d, i) {
         return arc.centroid(d)[1] + arc.centroid(d)[1]/3.5;
     })
-    .attr('r', 60)
+    .attr('r', 90)
     .attr('fill', function(d, i) {
         return color2(i);
     });
+
+// rect
+svg.append('rect')
+    .attr('x', 150)
+    .attr('y', 150)
+    .attr('width', 200)
+    .attr('height', 200)
+    // .attr('transform', 'rotate(45,250,250)')
+    .attr('fill', color2('a'));
+
+// circle
+svg.append('circle')
+    .attr('cx', 250)
+    .attr('cy', 250)
+    .attr('r', 90)
+    .attr('fill', color2('b'));
