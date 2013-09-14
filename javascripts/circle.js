@@ -1,32 +1,19 @@
+// based on: http://mbostock.github.io/d3/talk/20110921/patent-suits.html
+
 var links = [
-    {source: "Microsoft", target: "Amazon", type: "licensing"},
-    {source: "Microsoft", target: "HTC", type: "licensing"},
-    {source: "Samsung", target: "Apple", type: "suit"},
-    {source: "Motorola", target: "Apple", type: "suit"},
-    {source: "Nokia", target: "Apple", type: "resolved"},
-    {source: "HTC", target: "Apple", type: "suit"},
-    {source: "Kodak", target: "Apple", type: "suit"},
-    {source: "Microsoft", target: "Barnes & Noble", type: "suit"},
-    {source: "Microsoft", target: "Foxconn", type: "suit"},
-    {source: "Oracle", target: "Google", type: "suit"},
-    {source: "Apple", target: "HTC", type: "suit"},
-    {source: "Microsoft", target: "Inventec", type: "suit"},
-    {source: "Samsung", target: "Kodak", type: "resolved"},
-    {source: "LG", target: "Kodak", type: "resolved"},
-    {source: "RIM", target: "Kodak", type: "suit"},
-    {source: "Sony", target: "LG", type: "suit"},
-    {source: "Kodak", target: "LG", type: "resolved"},
-    {source: "Apple", target: "Nokia", type: "resolved"},
-    {source: "Qualcomm", target: "Nokia", type: "resolved"},
-    {source: "Apple", target: "Motorola", type: "suit"},
-    {source: "Microsoft", target: "Motorola", type: "suit"},
-    {source: "Motorola", target: "Microsoft", type: "suit"},
-    {source: "Huawei", target: "ZTE", type: "suit"},
-    {source: "Ericsson", target: "ZTE", type: "suit"},
-    {source: "Kodak", target: "Samsung", type: "resolved"},
-    {source: "Apple", target: "Samsung", type: "suit"},
-    {source: "Kodak", target: "RIM", type: "suit"},
-    {source: "Nokia", target: "Qualcomm", type: "suit"}
+    {source: "王菲", target: "李亚鹏"},
+    {source: "李亚鹏", target: "瞿颖"},
+    {source: "王菲", target: "谢霆锋"},
+    {source: "李亚鹏", target: "周迅"},
+    {source: "谢霆锋", target: "周迅"},
+    {source: "谢霆锋", target: "张柏芝"},
+    {source: "周迅", target: "窦鹏"},
+    {source: "窦鹏", target: "窦唯"},
+    {source: "窦唯", target: "王菲"},
+    {source: "周迅", target: "李大齐"},
+    {source: "瞿颖", target: "张亚东"},
+    {source: "张亚东", target: "窦颖"},
+    {source: "窦颖", target: "窦唯"}
 ];
 
 var nodes = {};
